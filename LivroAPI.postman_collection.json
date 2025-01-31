@@ -1,0 +1,119 @@
+{
+	"info": {
+		"_postman_id": "037b906c-e78e-4062-ab33-af6b2ce86e5d",
+		"name": "Livro API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3165388"
+	},
+	"item": [
+		{
+			"name": "findAll",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "findById",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "findByName",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "contagem",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"isbn\": \"978-85-508-0816-1\",\n    \"titulo\": \"Arquitetura Limpa: O guia do artesão para estrutura e design de software\",\n    \"autor\": \"Robert C. Martin\",\n    \"editora\": \"Alta Books\",\n    \"dataPublicacao\": \"2019-03-25\",\n    \"preco\": \"79.80\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/livro",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"livro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"isbn\": \"978-85-508-0816-1\",\n    \"titulo\": \"Arquitetura Limpa: O guia do artesão para estrutura e design de software\",\n    \"autor\": \"Robert C. Martin\",\n    \"editora\": \"Alta Books\",\n    \"dataPublicacao\": \"2019-03-25\",\n    \"preco\": \"58.65\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/livro/11",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"livro",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/livro/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"livro",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
