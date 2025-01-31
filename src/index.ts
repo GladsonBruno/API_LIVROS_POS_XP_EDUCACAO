@@ -21,6 +21,8 @@ const options: cors.CorsOptions = {
     preflightContinue: false,
 };
 
+const dataSource = AppDataSource.getInstance();
+
 dotenv.config();
 
 const app: Express = express();
@@ -58,9 +60,11 @@ Routes.forEach(route => {
     });
 })
 
-AppDataSource.initialize();
+
+dataSource.initialize();
+
 (async () => {
-    await runSeeders(AppDataSource);
+    await runSeeders(dataSource);
 })();
 
 server = app.listen(port);

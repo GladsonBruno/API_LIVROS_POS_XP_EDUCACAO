@@ -1,4 +1,4 @@
-import { Like, Raw, Repository } from "typeorm";
+import { DataSource, Like, Raw, Repository } from "typeorm";
 import { AppDataSource } from "../config/AppDataSource"
 import { Livro } from "../model/Livro";
 import { Console } from "console";
@@ -6,9 +6,10 @@ import { Console } from "console";
 export class LivroRepository {
 
     private readonly repository: Repository<Livro>;
+    private dataSource: DataSource = AppDataSource.getInstance();
 
     constructor() {
-        this.repository = AppDataSource.getRepository(Livro);
+        this.repository = this.dataSource.getRepository(Livro);
     }
 
     async findAll() {

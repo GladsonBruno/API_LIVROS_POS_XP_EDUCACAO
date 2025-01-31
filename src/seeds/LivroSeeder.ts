@@ -8,7 +8,9 @@ export default class UserSeeder implements Seeder {
         dataSource: DataSource,
         factoryManager: SeederFactoryManager
     ): Promise<any> {
-      await AppDataSource.initialize();
+      let appDataSource: DataSource = AppDataSource.getInstance();
+      
+      await appDataSource.initialize();
 
       const repository = dataSource.getRepository(Livro);
       
