@@ -26,7 +26,6 @@
    "scripts": {
       "start": "ts-node src/index.ts",
       "start_docker": "ts-node /home/code/src/index.ts",
-      "typeorm": "typeorm-ts-node-commonjs",
-      "seed:run": "ts-node ./node_modules/typeorm-extension/dist/cli/index.js seed -d ./src/config/AppDataSource.js"
+      "typeorm": "typeorm-ts-node-commonjs"
    }
 }
