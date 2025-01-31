@@ -33,3 +33,21 @@ As requisições também podem ser testadas nesta página.
 Collection postman disponível em [LivroAPI.postman_collection.json](./LivroAPI.postman_collection.json)
 
 Basta importar no Postman e testar as requisições.
+
+## Diagrama C4 Model
+
+### Nivel 1 - Contexto
+
+TO-DO
+
+### Nivel 2 - Container
+
+TO-DO
+
+### Nivel 3 - Componente
+
+TO-DO
+
+### Nivel 4 - Codigo
+
+![](./docs/04-diagrama-de-classe.png)
