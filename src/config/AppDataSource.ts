@@ -36,7 +36,7 @@ export class AppDataSource {
         return AppDataSource.instance;
     }
 
-    public static initialize() {
+    private static initialize() {
         this.instance.initialize();
     }
 

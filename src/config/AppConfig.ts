@@ -1,6 +1,6 @@
 import express, { Express, Request, Response } from 'express';
-import { Routes } from "./routes/routes";
-import { AppDataSource } from './config/AppDataSource';
+import { Routes } from "../routes/routes";
+import { AppDataSource } from './AppDataSource';
 import { runSeeders } from 'typeorm-extension';
 import * as bodyParser from "body-parser";
 import swaggerUi from 'swagger-ui-express';
@@ -10,7 +10,7 @@ import { CorsOptions } from 'cors';
 
 dotenv.config();
 
-export class Server {
+export class AppConfig {
     private readonly app: Express;
     private readonly port: number | string;
     private readonly dataSource = AppDataSource.getInstance();
@@ -92,6 +92,3 @@ export class Server {
         });
     }
 }
-
-const server = new Server();
-server.start();

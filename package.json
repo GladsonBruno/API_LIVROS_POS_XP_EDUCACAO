@@ -25,8 +25,8 @@
       "typeorm-extension": "^3.6.3"
    },
    "scripts": {
-      "start": "ts-node src/index.ts",
-      "start_docker": "ts-node /home/code/src/index.ts",
+      "start": "ts-node src/Application.ts",
+      "start_docker": "ts-node /home/code/src/Application.ts",
       "typeorm": "typeorm-ts-node-commonjs"
    }
 }
