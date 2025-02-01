@@ -77,12 +77,19 @@ export const Routes = [
          *           schema:
          *             type: object
          *             properties:
+         *               isbn:
+         *                 type: string
          *               titulo:
          *                 type: string
          *               autor:
          *                 type: string
-         *               ano:
-         *                 type: integer
+         *               editora:
+         *                 type: string
+         *               dataPublicacao:
+         *                 type: string
+         *                 format: date
+         *               preco:
+         *                 type: number
          *     responses:
          *       201:
          *         description: Livro criado
