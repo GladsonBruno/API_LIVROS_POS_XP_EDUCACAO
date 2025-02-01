@@ -1,17 +1,13 @@
 import { Seeder, SeederFactoryManager } from 'typeorm-extension';
 import { DataSource } from 'typeorm';
 import { Livro } from '../model/Livro';
-import { AppDataSource } from '../config/AppDataSource';
 
 export default class UserSeeder implements Seeder {
     public async run(
         dataSource: DataSource,
         factoryManager: SeederFactoryManager
     ): Promise<any> {
-      let appDataSource: DataSource = AppDataSource.getInstance();
       
-      await appDataSource.initialize();
-
       const repository = dataSource.getRepository(Livro);
       
       let registros: number = await repository.count();
