@@ -30,7 +30,7 @@ As requisições também podem ser testadas nesta página.
 
 ## Uso da collection Postman
 
-Collection postman disponível em [LivroAPI.postman_collection.json](./LivroAPI.postman_collection.json)
+Collection postman disponível em [LivroAPI.postman_collection.json](./docs/LivroAPI.postman_collection.json)
 
 Basta importar no Postman e testar as requisições.
 
