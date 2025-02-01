@@ -1,13 +1,6 @@
-import { HealthController } from "../controller/HealthController";
 import { LivroController } from "../controller/LivroController";
 
 export const Routes = [
-    {
-        method: "get",
-        route: "/api/health",
-        controller: HealthController,
-        action: "get"
-    },
     {
         method: "get",
         route: "/api/livro",
