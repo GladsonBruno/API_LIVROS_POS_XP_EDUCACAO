@@ -434,7 +434,7 @@
             <mxPoint x="1240" y="731" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="XDkbUSyl99M0XqUbsIQ2-34" value="Realiza operações&amp;nbsp;&lt;div&gt;CRUD&lt;/div&gt;&lt;div&gt;no banco&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="XDkbUSyl99M0XqUbsIQ2-33">
+        <mxCell id="XDkbUSyl99M0XqUbsIQ2-34" value="Armazena e recupera&lt;div&gt;dados do&amp;nbsp;&lt;/div&gt;&lt;div&gt;banco de dados&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="XDkbUSyl99M0XqUbsIQ2-33">
           <mxGeometry x="0.0241" y="-1" relative="1" as="geometry">
             <mxPoint x="-40" y="9" as="offset" />
           </mxGeometry>
