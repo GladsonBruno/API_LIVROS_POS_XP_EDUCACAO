@@ -36,18 +36,24 @@ Basta importar no Postman e testar as requisições.
 
 ## Diagrama C4 Model
 
+O diagrama C4 pode ser baixado através deste [link](./docs/Diagrama%20C4.drawio).
+
+O mesmo deve ser aberto no [draw.io](https://app.diagrams.net/).
+
 ### Nivel 1 - Contexto
 
-TO-DO
+![Nivel 1 - Contexto](./docs/C4-01%20-%20Contexto.jpg)
 
 ### Nivel 2 - Container
 
-TO-DO
+![Nivel 2 - Container](./docs/C4-02%20-%20Container.jpg)
 
 ### Nivel 3 - Componente
 
-TO-DO
+![Nivel 3 - Componente](./docs/C4-03%20-%20Componente.jpg)
 
 ### Nivel 4 - Codigo
 
-![](./docs/04-diagrama-de-classe.png)
+Gerado automáticamente via pluggin [classdiagram-ts](https://marketplace.visualstudio.com/items?itemName=AlexShen.classdiagram-ts) do Visual Studio Code.
+
+![Nivel 4 - Codigo](./docs/C4%20-%2004%20-%20Codigo.png)
