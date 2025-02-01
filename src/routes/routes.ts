@@ -18,6 +18,11 @@ export const Routes = [
          * /api/livro:
          *   get:
          *     summary: Retorna todos os livros
+         *     parameters:
+         *       - in: query
+         *         name: nome
+         *         required: false
+         *         description: Filtra os livros pelo nome ( Opcional )
          *     responses:
          *       200:
          *         description: Lista de livros

@@ -8,31 +8,56 @@ export class LivroService {
         this.livroRepository = new LivroRepository();
     }
 
-    findAll () {
+    async findAll () {
         return this.livroRepository.findAll();
     }
 
-    findById (id: number) {
-        return this.livroRepository.findById(id);
+    async findById (id: number) {
+        let livro = await this.livroRepository.findById(id);
+        if(!livro) {
+            return null;
+        } else {
+            return livro;
+        }
     }
 
-    findByName (titulo: string) {
+    async findByName (titulo: string) {
         return this.livroRepository.findByName(titulo);
     }
 
-    contagem () {
+    async contagem () {
         return this.livroRepository.contagem();
     }
 
-    save (livro: Livro) {
+    async save (novoLivro: Livro) {
+        let livro: Livro = new Livro(novoLivro.isbn, novoLivro.titulo, novoLivro.autor, novoLivro.editora, novoLivro.dataPublicacao, novoLivro.preco);
         return this.livroRepository.save(livro);
     }
 
-    update (id: number, livro: Livro) {
-        return this.livroRepository.update(id, livro);
+    async update (id: number, livro: Livro) {
+        let livroParaAtualizar = await this.livroRepository.findById(id);
+
+        if (!livroParaAtualizar) {
+            return null;
+        }
+
+        livroParaAtualizar.isbn = livro.isbn;
+        livroParaAtualizar.titulo = livro.titulo;
+        livroParaAtualizar.autor = livro.autor;
+        livroParaAtualizar.editora = livro.editora;
+        livroParaAtualizar.dataPublicacao = livro.dataPublicacao;
+        livroParaAtualizar.preco = livro.preco;
+
+        return this.livroRepository.update(id, livroParaAtualizar);
     }
 
-    delete (id: number) {
+    async delete (id: number) {
+        let livroParaDeletar = await this.livroRepository.findById(id);
+
+        if (!livroParaDeletar) {
+            return null;
+        }
+
         return this.livroRepository.delete(id);
     }
 

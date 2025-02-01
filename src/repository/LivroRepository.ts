@@ -1,12 +1,11 @@
-import { DataSource, Like, Raw, Repository } from "typeorm";
+import { DataSource, Raw, Repository } from "typeorm";
 import { AppDataSource } from "../config/AppDataSource"
 import { Livro } from "../model/Livro";
-import { Console } from "console";
 
 export class LivroRepository {
 
     private readonly repository: Repository<Livro>;
-    private dataSource: DataSource = AppDataSource.getInstance();
+    private readonly dataSource: DataSource = AppDataSource.getInstance();
 
     constructor() {
         this.repository = this.dataSource.getRepository(Livro);
@@ -39,24 +38,9 @@ export class LivroRepository {
     }
 
     async update(id: number, livro: Livro) {
-        let livroParaAtualizar = await this.repository.findOne({
-            where: {
-                id: id
-            }
+        return await this.repository.save({
+            id, ...livro
         });
-
-        if (!livroParaAtualizar) {
-            return null;
-        }
-
-        livroParaAtualizar.isbn = livro.isbn;
-        livroParaAtualizar.titulo = livro.titulo;
-        livroParaAtualizar.autor = livro.autor;
-        livroParaAtualizar.editora = livro.editora;
-        livroParaAtualizar.dataPublicacao = livro.dataPublicacao;
-        livroParaAtualizar.preco = livro.preco;
-
-        return await this.repository.save(livroParaAtualizar);
     }
 
     async delete(id: number) {

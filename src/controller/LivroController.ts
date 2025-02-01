@@ -8,50 +8,57 @@ export class LivroController {
 
     async findAll (request: Request, response: Response, next: NextFunction) {
         if (request.query.nome !== undefined) {
-            let livro = await this.livroService.findByName(request.query.nome as string);
-            return response.send(livro).status(200);
+            let livrosPorNome = await this.livroService.findByName(request.query.nome as string);
+            return response.status(200).send(livrosPorNome);
         } else {
             let livros = await this.livroService.findAll()
-            return response.send(livros).status(200);
+            return response.status(200).send(livros);
         }
     }
 
     async findById (request: Request, response: Response, next: NextFunction) {
         let id = request.params.id;
-        let livro = await this.livroService.findById(Number(id))
-        return response.send(livro).status(200);
+        let livro = await this.livroService.findById(Number(id));
+
+        if(livro === null) {
+            return response.status(404).send('Livro não encontrado');
+        } else {
+            return response.status(200).send(livro);   
+        }
     }
 
     async contagem (request: Request, response: Response, next: NextFunction) {
         let contagem = await this.livroService.contagem()
-        return response.send(`Total de registros: ${contagem}`).status(200);
+        return response.status(200).send(`Total de registros: ${contagem}`);
     }
 
     async save (request: Request, response: Response, next: NextFunction) {
-        let body: Livro = request.body;
-        console.log(request.body);
-        let livro: Livro = new Livro(body.isbn, body.titulo, body.autor, body.editora, body.dataPublicacao, body.preco);
-        let livroSalvo = await this.livroService.save(livro);
-        return response.send(livroSalvo).status(201);
+        let novoLivro: Livro = request.body;
+        let livroSalvo = await this.livroService.save(novoLivro);
+        return response.status(201).send(livroSalvo);
     }
 
     async update (request: Request, response: Response, next: NextFunction) {
-        let body = request.body;
         let id: number = Number(request.params.id);
-        let livro: Livro = new Livro(body.isbn, body.titulo, body.autor, body.editora, body.dataPublicacao, body.preco);
+        let livro = request.body;
         let livroAtualizado = await this.livroService.update(id, livro);
 
         if(livroAtualizado === null) {
-            return response.send('Livro não encontrado').status(404);
+            return response.status(404).send('Livro não encontrado');
+        } else {
+            return response.status(200).send(livroAtualizado);
         }
-
-        return response.send(livroAtualizado).status(200);
     }
 
     async delete (request: Request, response: Response, next: NextFunction) {
         let id = request.params.id;
         let livroDeletado = await this.livroService.delete(Number(id));
-        return response.send(livroDeletado).status(200);
+
+        if(livroDeletado === null) {
+            return response.status(404).send('Livro não encontrado');
+        } else {
+            return response.status(200).send('Livro deletado com sucesso');
+        }
     }
 
 }
