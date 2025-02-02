@@ -26,7 +26,10 @@ export class LivroService {
     }
 
     async contagem () {
-        return this.livroRepository.contagem();
+        let contagem = await this.livroRepository.contagem();
+        return {
+            total: contagem
+        };
     }
 
     async save (novoLivro: Livro) {

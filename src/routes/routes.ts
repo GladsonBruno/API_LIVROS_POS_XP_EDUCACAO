@@ -19,6 +19,28 @@ export const Routes = [
          *     responses:
          *       200:
          *         description: Lista de livros
+         *         content: 
+         *           application/json:
+         *             schema:
+         *               type: array
+         *               items:
+         *                 type: object
+         *                 properties:
+         *                   id:
+         *                    type: integer
+         *                   isbn:
+         *                     type: string
+         *                   titulo:
+         *                     type: string
+         *                   autor:
+         *                     type: string
+         *                   editora:
+         *                     type: string
+         *                   dataPublicacao:
+         *                     type: string
+         *                     format: date
+         *                   preco:
+         *                     type: number
          */
     },
     {
@@ -33,7 +55,14 @@ export const Routes = [
          *     summary: Retorna a contagem de livros cadastrados
          *     responses:
          *       200:
-         *         description: Total de registros X
+         *         description: Total de registros
+         *         content:
+         *          application/json:
+         *            schema:
+         *              type: object
+         *              properties:
+         *                total:
+         *                  type: integer
          */
     },
     {
@@ -56,6 +85,26 @@ export const Routes = [
          *     responses:
          *       200:
          *         description: Livro encontrado
+         *         content:
+         *           application/json:
+         *             schema:
+         *              type: object
+         *              properties:
+         *                id:
+         *                  type: integer
+         *                isbn:
+         *                  type: string
+         *                titulo:
+         *                  type: string
+         *                autor:
+         *                  type: string
+         *                editora:
+         *                  type: string
+         *                dataPublicacao:
+         *                  type: string
+         *                  format: date
+         *                preco:
+         *                  type: number
          *       404:
          *         description: Livro não encontrado
          */
@@ -93,6 +142,26 @@ export const Routes = [
          *     responses:
          *       201:
          *         description: Livro criado
+         *         content:
+         *           application/json:
+         *             schema:
+         *              type: object
+         *              properties:
+         *                id:
+         *                  type: integer
+         *                isbn:
+         *                  type: string
+         *                titulo:
+         *                  type: string
+         *                autor:
+         *                  type: string
+         *                editora:
+         *                  type: string
+         *                dataPublicacao:
+         *                  type: string
+         *                  format: date
+         *                preco:
+         *                  type: number
          */
     },
     {
@@ -119,15 +188,44 @@ export const Routes = [
          *           schema:
          *             type: object
          *             properties:
+         *               id:
+         *                 type: integer
+         *               isbn:
+         *                 type: string
          *               titulo:
          *                 type: string
          *               autor:
          *                 type: string
-         *               ano:
-         *                 type: integer
+         *               editora:
+         *                 type: string
+         *               dataPublicacao:
+         *                 type: string
+         *                 format: date
+         *               preco:
+         *                 type: number
          *     responses:
          *       200:
          *         description: Livro atualizado
+         *         content:
+         *           application/json:
+         *             schema:
+         *              type: object
+         *              properties:
+         *                id:
+         *                  type: integer
+         *                isbn:
+         *                  type: string
+         *                titulo:
+         *                  type: string
+         *                autor:
+         *                  type: string
+         *                editora:
+         *                  type: string
+         *                dataPublicacao:
+         *                  type: string
+         *                  format: date
+         *                preco:
+         *                  type: number
          *       404:
          *         description: Livro não encontrado
          */
@@ -152,6 +250,11 @@ export const Routes = [
          *     responses:
          *       200:
          *         description: Livro deletado
+         *         content:
+         *          application/text:
+         *            schema:
+         *              type: string
+         *              example: "Livro deletado com sucesso!"
          *       404:
          *         description: Livro não encontrado
          */

@@ -29,7 +29,7 @@ export class LivroController {
 
     async contagem (request: Request, response: Response, next: NextFunction) {
         let contagem = await this.livroService.contagem()
-        return response.status(200).send(`Total de registros: ${contagem}`);
+        return response.status(200).send(contagem);
     }
 
     async save (request: Request, response: Response, next: NextFunction) {
