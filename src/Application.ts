@@ -1,10 +1,10 @@
 import { AppConfig } from "./config/AppConfig";
 
 export class Application {
-    public static start(): void {
+    public static main(): void {
         const app = new AppConfig();
         app.start();
     }
 }
 
-Application.start();
+Application.main();
